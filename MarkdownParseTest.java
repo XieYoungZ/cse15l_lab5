@@ -21,14 +21,14 @@ public class MarkdownParseTest {
 
     @Test
     public void testFile1() throws IOException {
-        String contents = Files.readString(Path.of("./test-file.md"));
+        String contents = Files.readString(Path.of("test-file.md"));
         //List<String> expect = List.of("https://something.com", "some-thing.html");
         assertEquals(List.of("https://something.com", "some-thing.html"), MarkdownParse.getLinks(contents));
     }
 
     @Test
     public void testFile2() throws IOException {
-        String contents= Files.readString(Path.of("/Users/wang/Documents/GitHub/markdown-parser_Lab4/test-file2.md"));
+        String contents= Files.readString(Path.of("test-file2.md"));
         List<String> expect = List.of("https://google.com", "some-thing.html");
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }
@@ -36,28 +36,28 @@ public class MarkdownParseTest {
     @Test
    public void testTestFile1() throws IOException{
        List<String> StringInput = List.of("https://google.com", "some-thing.html");
-       List<String> Actual = MarkdownParse.getLinks(Files.readString(Path.of("/Users/wang/Documents/GitHub/markdown-parser_Lab4/test-file2.md")));
+       List<String> Actual = MarkdownParse.getLinks(Files.readString(Path.of("test-file2.md")));
        assertEquals(StringInput, Actual);
    }
 
    @Test
    public void testTestFile3() throws IOException{
        List<String> StringInput = List.of();
-       List<String> Actual = MarkdownParse.getLinks(Files.readString(Path.of("/Users/wang/Documents/GitHub/markdown-parser_Lab4/test-file3.md")));
+       List<String> Actual = MarkdownParse.getLinks(Files.readString(Path.of("test-file3.md")));
        assertEquals(StringInput, Actual);
    }
  
    @Test
    public void testTestFile5() throws IOException{
        List<String> StringInput = List.of("page.com");
-       List<String> Actual = MarkdownParse.getLinks(Files.readString(Path.of("/Users/wang/Documents/GitHub/markdown-parser_Lab4/test-file5.md")));
+       List<String> Actual = MarkdownParse.getLinks(Files.readString(Path.of("test-file5.md")));
        assertEquals(StringInput, Actual);
    }
  
    @Test
    public void testTestFile6() throws IOException{
        List<String> StringInput = List.of("page.com");
-       List<String> Actual = MarkdownParse.getLinks(Files.readString(Path.of("/Users/wang/Documents/GitHub/markdown-parser_Lab4/test-file6.md")));
+       List<String> Actual = MarkdownParse.getLinks(Files.readString(Path.of("test-file6.md")));
        assertEquals(StringInput, Actual);
    }
 
